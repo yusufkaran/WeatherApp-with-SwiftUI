@@ -17,9 +17,16 @@ struct ContentView: View {
       
       if let location = locationManager.location {
         if let weather = weather {
-          Text("Hava Durumu Verisi Çekildi!")
+          HomeView(weather: weather)
         } else {
-          
+          LoadingView()
+            .task {
+              do {
+                weather = try await weatherManager.getCurrentWeather(latitude: location.latitude, longitude: location.longitude)
+              } catch {
+                  print("Error getting weather: \(error)")
+              }
+            }
         }
       } else {
         if locationManager.isLoading {
@@ -30,7 +37,7 @@ struct ContentView: View {
         }
       }
     }
-    .background(Color(.gray))
+    .background(Color(hue: 0.656, saturation: 0.787, brightness: 0.354))
     .preferredColorScheme(.dark)
   }
 }
