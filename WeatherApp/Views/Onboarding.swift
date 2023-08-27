@@ -27,6 +27,7 @@ struct Onboarding: View {
       LocationButton(.shareCurrentLocation) {
         locationManager.requestLocation()
       }
+      
       .cornerRadius(30)
       .symbolVariant(.fill)
       .foregroundColor(.white)

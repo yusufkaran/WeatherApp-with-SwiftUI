@@ -82,14 +82,14 @@ struct HomeView: View {
           .frame(maxWidth: .infinity, alignment: .leading)
           .padding()
           .padding(.bottom, 20)
-          .foregroundColor(Color(hue: 0.656, saturation: 0.787, brightness: 0.354))
+          .foregroundColor(.black)
           .background(.white)
           .cornerRadius(20, corners: [.topLeft,.topRight])
         }
         
       }
       .edgesIgnoringSafeArea(.bottom)
-      .background(Color(hue: 0.656, saturation: 0.787, brightness: 0.354))
+      .background(Color(hue: 0.108, saturation: 1.0, brightness: 0.975))
       .preferredColorScheme(.dark)
     }
 }
